@@ -2,9 +2,6 @@
   "name": "brandai-cli",
   "version": "1.0.0",
   "description": "brandai-cli is a tool to be used to download your style data from http://brand.ai",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "bin": {
     "brandai": "brandai-cli.js"
   },
@@ -17,11 +14,7 @@
     "download": "^3.2.0",
     "download-status": "^2.2.1",
     "meow": "^3.3.0"
-  },
-  "devDependencies": {
-    "ava": "^0.0.4",
-    "concat-stream": "^1.5.0"
-  },
+  }
   "keywords": [
     "brandai",
     "cli",
