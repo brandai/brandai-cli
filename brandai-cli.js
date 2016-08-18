@@ -8,22 +8,22 @@ var brandaiConfig = require('./brandai-config.json');
 var cli = meow({
   help: [
     'Usage',
-    '  $ brandai  <json|images|icons> --org <organization> --s <styleguide> --k <share key>',
-    '  $ brandai  <json|images|icons> --org <organization> --s <styleguide> --k <share key> --dest <destination folder>',
+    '  $ brandai  <json|images|icons> --org <organization> --l <library> --k <share key>',
+    '  $ brandai  <json|images|icons> --org <organization> --l <library> --k <share key> --dest <destination folder>',
     '  $ brandai  <json|images|icons>',
     '  $ brandai  <json|images|icons> --dest <destination folder>',
     '',
     'Examples',
-    '  brandai json --org acme-demo-new --s style',
-    '  brandai icons --organization acme-demo-new --styleguide style --dest temp/',
+    '  brandai json --org acme-demo-new --l style',
+    '  brandai icons --organization acme-demo-new --library style --dest temp/',
     '  brandai images                     (style data settings should be configured in brandai-config.json file)',
     '  brandai json --dest source/_data   (style data settings should be configured in brandai-config.json file)',
     '',
     'Options',
     '  -d, --dest               Where to place the downloaded files',
     '  -org, --organization     Organization name',
-    '  -s, --styleguide         Style guide name',
-    '  -k, --key                share key (if your styleguide is private)',
+    '  -l, --library            Design library name',
+    '  -k, --key                share key (if your design library is private)',
     ''
   ],
   description: false
@@ -31,13 +31,13 @@ var cli = meow({
   string: [
     'dest',
     'organization',
-    'styleguide',
+    'library',
     'key',
   ],
   alias: {
     d: 'dest',
     org: 'organization',
-    s: 'styleguide',
+    l: 'library',
     k: 'key',
   },
   default: {
@@ -50,10 +50,10 @@ var cli = meow({
 // var brandAIHost = 'https://assets.brand.ai/';
 var brandAIHost = 'http://localhost:3002/';
 var organization = cli.flags.organization || brandaiConfig.organization;
-var styleguide = cli.flags.styleguide || brandaiConfig.styleguide;
+var library = cli.flags.library || brandaiConfig.library;
 var sharedKey = cli.flags.key || brandaiConfig.key;
 
-var brandAiPath = (organization) + '/' + (styleguide);
+var brandAiPath = (organization) + '/' + (library);
 
 function getKeyString(firstParam) {
   if (!sharedKey) {
@@ -104,7 +104,7 @@ if (process.stdin.isTTY) {
   var src = cli.input;
   var dest = cli.flags.dest;
 
-  if (!src.length || !organization || !styleguide) {
+  if (!src.length || !organization || !library) {
     cli.showHelp(1);
   }
 
@@ -114,7 +114,7 @@ if (process.stdin.isTTY) {
       'Specify style data type you would like to fetch from brand.ai',
       'Example',
       '  brandai json',
-      '  brandai icons --organization acme-demo-new --styleguide style --dest temp/'
+      '  brandai icons --organization acme-demo-new --library style --dest temp/'
     ].join('\n'));
     process.exit(1);
   }
