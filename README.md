@@ -1,7 +1,6 @@
 # brandai-cli
 
-Command line tool that can help you easily sync your style assets from [Brand.ai](https://brand.ai) to 
-your current working environment.
+Command line tool that helps you sync your style assets on [Brand.ai](https://brand.ai) with your working environment.
 
 ## Installation
 ```
@@ -32,14 +31,13 @@ $ brandai --help
 ```
 
 #### Connecting to your design library
-As you see from the examples above you can provide your design library information either by setting it in brandai-config.json or ar one
+As you see from the examples above, you can provide your design library information either by setting it in brandai-config.json or as one
 of the flags on the command itself.
 
-Note: If the design library is private you will need to provide a share key that can be found in the share menu.
+Note: If the design library is private, you will need to provide a share key that can be found in the Share menu on Brand.ai.
 
 #### Data types:
 * json - will download your design library information and create style-data.json file in the defined directory.
-    
-    Example of style-data.json built from our [example design library](https://brand.ai/acme-demo-new/style/applications/data-export/json)
-* icons - will download and extract your design library icons
-* images - will download and extract your design library images
+    For example, [here is the style-data.json](https://brand.ai/acme-demo-new/style/applications/data-export/json) that is created for [this design library](https://brand.ai/acme-demo-new/style).
+* icons - will download and extract your design library icons.
+* images - will download and extract your design library images.
