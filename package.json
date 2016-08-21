@@ -6,7 +6,7 @@
     "brandai": "brandai-cli.js"
   },
   "files": [
-    "brandai-cli.js"
+    "brandai-cli.js", "brandai-config.json"
   ],
   "author": "Brand.ai",
   "license": "MIT",
