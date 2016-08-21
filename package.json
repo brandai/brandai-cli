@@ -1,6 +1,6 @@
 {
   "name": "brandai-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "brandai-cli is a tool to be used to download your style data from http://brand.ai",
   "bin": {
     "brandai": "brandai-cli.js"
@@ -21,5 +21,4 @@
     "design system",
     "download"
   ]
-
 }
