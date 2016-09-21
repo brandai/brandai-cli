@@ -25,8 +25,8 @@ $ brandai --help
 
   Options
     -d, --dest               Where to place the downloaded files, default is current directory
-    -org, --organization     Organization name
-    -l, --library            Design library name
+    -org, --organization     Organization name (replace any space with a dash "-")
+    -l, --library            Design library name (replace any space with a dash "-")
     -k, --key                share key (if your design library is private)
 ```
 
