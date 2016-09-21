@@ -47,8 +47,8 @@ var cli = meow({
 
 
 //Brand.ai connection configuration
-// var brandAIHost = 'https://assets.brand.ai/';
-var brandAIHost = 'http://localhost:3002/';
+var brandAIHost = 'https://assets.brand.ai/';
+// var brandAIHost = 'http://localhost:3002/';
 var organization = cli.flags.organization || brandaiConfig.organization;
 var library = cli.flags.library || brandaiConfig.library;
 var sharedKey = cli.flags.key || brandaiConfig.key;
