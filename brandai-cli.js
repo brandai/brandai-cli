@@ -59,7 +59,7 @@ function getKeyString(firstParam) {
   if (!sharedKey) {
     return '';
   }
-  var keyString = firstParam ? '?key=' + sharedKey : '&key=' + sharedKey;
+  var keyString = (firstParam ? '' : '&') + 'key=' + sharedKey;
   return keyString;
 };
 
